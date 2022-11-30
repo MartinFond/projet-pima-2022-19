@@ -64,7 +64,7 @@
   
   .results-wrap {
     position: relative;
-    top: 3rem;
+    top: 10rem;
     width: var(--resultWidth);
     height: 100px;
     margin-top: 0rem;
