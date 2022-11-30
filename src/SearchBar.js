@@ -45,14 +45,17 @@ import Jquery from "jquery";
             Jquery.ajax({
               type: 'GET',
               url:'../PHP/Connexion_API/Connect_api_youtube.php',
-              async: false,
                data : {"name":e.target.value},
            success:function (data) {
             var len=data.length;
             var l=JSON.parse(data);
             console.log(data);
             if(data!="null"){
-            influenceurs.push([l.name,l.pop,l.sub,l.vc,l.images,l.url,l.reseau]);}
+              let to_insert=[l.name,l.pop,l.sub,l.vc,l.images,l.url,l.reseau];
+              console.log(!influenceurs.includes(to_insert));
+              if(!influenceurs.includes(to_insert)){
+                influenceurs.push(to_insert);
+                props.rerender();}}
             //alert(influenceurs);
            },
            error : function(data,textStatus,errorThrown){
@@ -62,13 +65,16 @@ import Jquery from "jquery";
            Jquery.ajax({
             type: 'GET',
             url:'../PHP/Connexion_API/Connect_api_Spotify.php',
-            async: false,
              data : {"name":e.target.value},
              success:function (data) {
               var l=JSON.parse(data);
               console.log(data);
               if(data!=null){
-              influenceurs.push([l.name,l.pop,l.sub,l.vc,l.images,l.url,l.reseau]);}
+                let to_insert=[l.name,l.pop,l.sub,l.vc,l.images,l.url,l.reseau];
+                console.log(!influenceurs.includes(to_insert));
+                if(!influenceurs.includes(to_insert)){
+                  influenceurs.push(to_insert);
+                  props.rerender();}}
                 //influenceurs.push([data[i].name,data[i].pop,data[i].sub,data[i].vc,data[i].images])
 
               //alert(influenceurs);
@@ -80,19 +86,18 @@ import Jquery from "jquery";
          Jquery.ajax({
           type: 'GET',
           url:'../PHP/Connexion_API/Connect_api_twitch.php',
-          async: false,
            data : {"name":e.target.value},
-           timeout : 10000000000,
-
-
-           
-       success:function (data) {
+           success:function (data) {
         var len=data.length;
         console.log(data);
         if(data!="NULL" && data !="Curl error: NULL" && data!=""){
           var l=JSON.parse(data);
           //console.log(l["name"]);
-          influenceurs.push([l.channel,l.pop,l.sub,l.vc,l.images,l.url,l.reseau]);
+          let to_insert=[l.name,l.pop,l.sub,l.vc,l.images,l.url,l.reseau];
+          console.log(!influenceurs.includes(to_insert));
+          if(!influenceurs.includes(to_insert)){
+          influenceurs.push(to_insert);
+          props.rerender();}
         }
         //alert(influenceurs);
        },

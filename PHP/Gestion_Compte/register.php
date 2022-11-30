@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 380,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
@@ -294,7 +294,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Soumettre">
+            <input type="submit" class="btn btn-primary" value="Envoyer">
             <input type="reset" class="btn btn-secondary ml-2" value="Réinitialiser">
         </div>
         <p>Vous avez déjà un compte ? <a href="login.php">Connectez-vous ici</a>.</p>
