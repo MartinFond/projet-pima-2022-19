@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 380,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
