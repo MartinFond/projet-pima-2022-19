@@ -83,6 +83,9 @@ import Jquery from "jquery";
           async: false,
            data : {"name":e.target.value},
            timeout : 10000000000,
+
+
+           
        success:function (data) {
         var len=data.length;
         console.log(data);
